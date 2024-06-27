@@ -1,0 +1,50 @@
+name: Build and Deploy Timbu Docs
+
+on:
+  push:
+    branches: [prod]
+
+jobs:
+  build:
+    name: Deploy to timbucore server
+    runs-on: hngcore
+    strategy:
+      matrix:
+        node-version: [20.x]
+    defaults:
+      run:
+        working-directory: /var/www/timbu/prod/docs
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: Remove old actions remote url
+        continue-on-error: true
+        run: |
+           git stash
+           git remote rm action
+
+      - name: Pull from github
+        id: pull
+        run: |
+           remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+           git remote add action $remote_repo
+           git pull action prod
+      - name: install deps
+        run: npm install
+
+      - name: build
+        run: npm run build
+        env: 
+          CI: false
+
+      - name: copy to deployment folder
+        run: |
+             [ -d prod-build.2 ]&&rm -rf prod-build.2
+             [ -d prod-build.1 ]&&mv prod-build.1 prod-build.2
+             [ -d prod-build ]&&mv prod-build prod-build.1
+             cp -rf build prod-build
+

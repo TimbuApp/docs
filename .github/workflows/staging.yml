@@ -1,0 +1,90 @@
+name: Build and Deploy Timbu Staging App
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  build:
+    name: Build with github servers
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+      - name: set environments
+        run: |
+          touch .env
+          echo REACT_APP_API_URL=${{ secrets.STAGING_API_URL }} >> .env
+          echo REACT_API_URL=${{ secrets.STAGING_API_URL }} >> .env
+          echo VITE_APP_API_URL=${{ secrets.STAGING_API_URL }} >> .env
+          echo VITE_API_URL=${{ secrets.STAGING_API_URL }} >> .env
+          echo REACT_APP_URL=${{ secrets.STAGING_APP_URL }} >> .env
+          echo VITE_APP_URL=${{ secrets.STAGING_APP_URL }} >> .env
+          echo VITE_URL=${{ secrets.STAGING_APP_URL }} >> .env
+          echo VITE_ENV=${{ secrets.STAGING_ENV }} >> .env
+          echo VITE_APP_VERSION=${{ secrets.APP_VERSION }} >> .env
+          echo REACT_APP_VERSION=${{ secrets.APP_VERSION}} >> .env
+          echo VITE_APP_SYNCFUSION=${{ secrets.STAGING_SYNCFUSION }} >> .env
+          echo VITE_SYNCFUSION=${{ secrets.STAGING_SYNCFUSION }} >> .env
+          cat .env
+      - name: install deps
+        run: pnpm install --no-frozen-lockfile
+      - name: build static files
+        run: pnpm run build
+        env:
+          CI: false
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: timbustagingapp
+          if-no-files-found: error
+          path: |
+            build
+            .env
+          retention-days: 1
+
+  deploy:
+    name: Deploy to tim server
+    needs: build
+    runs-on: smallapps
+    defaults:
+      run:
+        working-directory: /var/www/timbu/staging/app
+    steps:
+      - name: Remove old actions remote url
+        continue-on-error: true
+        run: |
+           git stash
+           git remote rm action
+
+      - name: Pull from github
+        id: pull
+        run: |
+           remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+           git remote add action $remote_repo
+           git pull action staging
+      - name: clean the old build folder
+        run: |
+             rm -rf /var/www/timbu/staging/app/build 
+             # &&mkdir /var/www/timbu/staging/app/build
+      - name: get artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: timbustagingapp
+          path: /var/www/timbu/staging/app
+      - name: copy to deployment folder
+        run: |
+             [ -d staging-build.2 ]&&rm -rf staging-build.2
+             [ -d staging-build.1 ]&&mv staging-build.1 staging-build.2
+             [ -d staging-build ]&&mv staging-build staging-build.1
+             cp -rf build staging-build
