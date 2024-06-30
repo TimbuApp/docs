@@ -41,14 +41,13 @@ const config: Config = {
           editUrl:
             'https://github.com/timbuapp/docs.git',
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   // Please change this to your repo.
-        //   // Remove this to remove the "edit this page" links.
-        //   editUrl:
-        //     'https://github.com/timbuapp/docs.git',
-        // },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/timbuapp/docs.git',
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -88,7 +87,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/intro',
+              to: '/api/intro',
             },
           ],
         },
