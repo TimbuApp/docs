@@ -1,9 +1,9 @@
 # Create API Keys
 
-API Keys can be used to access your applications feature programmatically.
+API Keys can be used to access your application features programmatically.
 At Timbu we've provided organizations the ability to create and share apikeys with varying access levels.
 
-## Create your first Public Access keys
+## Create your first Api keys
 
 To create api keys, Login to your application and find the settings menu item on the sidebar at the left side of your screen.
 
