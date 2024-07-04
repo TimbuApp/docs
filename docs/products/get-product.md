@@ -6,12 +6,13 @@ sidebar_label: Get Products
 
 # Get Products
 
-This endpoint retrieves a list of products from the server based on the specified parameters.
+This endpoint retrieves a list of products from the server based on the specified parameters. 
 
 ## Endpoint
 
 `GET /products`
 
+This is a protected endpoint so as part of the request, you need to send `APP_ID` and `API_KEY` query params
 ## Parameters
 
 ### Query Parameters
@@ -29,13 +30,15 @@ This endpoint retrieves a list of products from the server based on the specifie
 | `size`          | int | No       | Size of the response items. Default 50. Max 100 |
 | `currency_code`          | string | No       | Currency code of prices to be retrieved with products |
 | `reverse_sort`          | bool | No       | Sorting order of the retrieved items. Default true (desc) |
+| `APP_ID`          | string | No       | APP ID for authentication |
+| `API_KEY`          | string | No       | API KEY for authentication |
 
 
 
 ## Example Request
 
 ```bash
-curl -X GET "https://api.timbu.cloud/products?organization_id=123&reverse_sort=false&page=2&size=10" 
+curl -X GET "https://api.timbu.cloud/products?organization_id=123&reverse_sort=false&page=2&size=10&APP_ID=123&API_KEY=1234567890" 
 ```
 
 
