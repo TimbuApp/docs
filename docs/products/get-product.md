@@ -12,7 +12,7 @@ This endpoint retrieves a list of products from the server based on the specifie
 
 `GET /products`
 
-This is a protected endpoint so as part of the request, you need to send `APP_ID` and `API_KEY` query params
+This is a protected endpoint so as part of the request, you need to send `Appid` and `Apikey` query params
 ## Parameters
 
 ### Query Parameters
@@ -30,8 +30,8 @@ This is a protected endpoint so as part of the request, you need to send `APP_ID
 | `size`          | int | No       | Size of the response items. Default 50. Max 100 |
 | `currency_code`          | string | No       | Currency code of prices to be retrieved with products |
 | `reverse_sort`          | bool | No       | Sorting order of the retrieved items. Default true (desc) |
-| `APP_ID`          | string | No       | APP ID for authentication |
-| `API_KEY`          | string | No       | API KEY for authentication |
+| `Appid`          | string | No       | APP ID for authentication |
+| `Apikey`          | string | No       | API KEY for authentication |
 
 
 

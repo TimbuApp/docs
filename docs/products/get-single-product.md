@@ -12,7 +12,7 @@ This endpoint retrieves details for a particular product.
 
 `GET /products/{product_id}`
 
-This is a protected endpoint so as part of the request, you need to send `APP_ID` and `API_KEY` query params
+This is a protected endpoint so as part of the request, you need to send `Appid` and `Apikey` query params
 
 ## Parameters
 
@@ -28,8 +28,8 @@ This is a protected endpoint so as part of the request, you need to send `APP_ID
 | Parameter        | Type   | Required | Description                      |
 |------------------|--------|----------|----------------------------------|
 | `organization_id`| string | Yes      | The unique identifier for the organization to which the product belongs. |
-| `APP_ID`          | string | No       | APP ID for authentication |
-| `API_KEY`          | string | No       | API KEY for authentication |
+| `Appid`          | string | No       | APP ID for authentication |
+| `Apikey`          | string | No       | API KEY for authentication |
 
 
 
