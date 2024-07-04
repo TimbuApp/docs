@@ -13,7 +13,7 @@ This endpoint creates a sale.
 `POST /sales`
 
 
-This is a protected endpoint so as part of the request, you need to send `APP_ID` and `API_KEY` query params
+This is a protected endpoint so as part of the request, you need to send `Appid` and `Apikey` query params
 
 ## Request
 
