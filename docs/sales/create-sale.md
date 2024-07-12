@@ -6,7 +6,7 @@ sidebar_label: Create Sale
 
 # Create Sale
 
-This endpoint creates a sale.
+This endpoint creates a sale. To create a successful sale, the products to be sold should have valid prices created on the app. The endpoint doesn't use external prices supplied via the API.
 
 ## Endpoint
 

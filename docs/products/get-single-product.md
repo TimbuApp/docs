@@ -102,3 +102,7 @@ curl -X GET "https://api.timbu.cloud/products/1234?organization_id=123"
 | `400`    | Bad Request. The request was invalid. |
 | `404`          | Not Found. The resource was not found. | 
 | `500`          | Internal Server Error. An error occurred on the server | 
+
+
+To get additional information added to the product, you have to make a request to `GET /extrainfo/{model_type}/{product_id}`
+where `model_type` is `products` and `product_id` is the product id.
