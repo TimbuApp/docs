@@ -37,9 +37,9 @@ Let's review the steps one more time.
 ```mdx title="Summary"
 # Preceeding Login in and creating an organization, here's a step by step guide to creating api keys.
 
--   Find the settings menu item from the sidebar menu.
--   Click the dropdown and select the advanced menu item.
--   On the page displayed, select 'generte api keys'.
--   Fill in the form by providing an app name (for identification), and access levels for the key.
--   Click on 'generate', and then retrieve the keys generated for you.
+- Find the settings menu item from the sidebar menu.
+- Click the dropdown and select the advanced menu item.
+- On the page displayed, select 'generte api keys'.
+- Fill in the form by providing an app name (for identification), and access levels for the key.
+- Click on 'generate', and then retrieve the keys generated for you.
 ```
