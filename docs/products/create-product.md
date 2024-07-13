@@ -1,39 +1,23 @@
-# Create Product 
+# Create Product
 
-Add **Markdown or React** files to `src/pages` to create a **standalone page**:
+To create a product you need to have the following
 
-- `src/pages/index.js` → `localhost:3000/`
-- `src/pages/foo.md` → `localhost:3000/foo`
-- `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
+- an account
+- the account must have a bussiness
 
-## Create your first React Page
+Creating a new Product
 
-Create a file at `src/pages/my-react-page.js`:
+- on yr dashboard, go to the product page by clicking on product from the sidebar
+  ![create_keys_step2](../../static/Screenshot_2024-07-13_08-23-19.png).
 
-```jsx title="src/pages/my-react-page.js"
-import React from 'react';
-import Layout from '@theme/Layout';
+- on the product page click on the `add product` button
+  ![create_keys_step2](../../static/Screenshot_2024-07-13_08-27-15.png)
 
-export default function MyReactPage() {
-  return (
-    <Layout>
-      <h1>My React page</h1>
-      <p>This is a React page</p>
-    </Layout>
-  );
-}
-```
+  this will pop up a modal where you add all the details of your product
 
-A new page is now available at [http://localhost:3000/my-react-page](http://localhost:3000/my-react-page).
+  ![create_keys_step2](../../static/Screenshot_2024-07-13_08-29-15.png)
 
-## Create your first Markdown Page
+- after filling in the details click on the `add` button this will add the product to your collection
+  ![create_keys_step2](../../static/Screenshot_2024-07-13_08-31-15.png)
 
-Create a file at `src/pages/my-markdown-page.md`:
-
-```mdx title="src/pages/my-markdown-page.md"
-# My Markdown page
-
-This is a Markdown page
-```
-
-A new page is now available at [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).
+## Congratulations you have successfully added your product
