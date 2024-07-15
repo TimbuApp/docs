@@ -38,7 +38,7 @@ This is a protected endpoint so as part of the request, you need to send `Appid`
 ## Example Request
 
 ```bash
-curl -X GET "https://api.timbu.cloud/products?organization_id=123&reverse_sort=false&page=2&size=10&APP_ID=123&API_KEY=1234567890" 
+curl -X GET "https://api.timbu.cloud/products?organization_id=123&reverse_sort=false&page=2&size=10&Appid=123&Apikey=1234567890" 
 ```
 
 
