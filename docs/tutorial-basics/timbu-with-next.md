@@ -32,6 +32,8 @@ https://api.timbu.cloud/products/your-product-id?organization_id=your-org-id&App
 
 ## Setting Up Route Handlers
 
+### For all products
+
 In your product **route.ts**, import axios and set up a GET function:
 
 ```typescript
@@ -52,17 +54,32 @@ export async function GET(req: Request) {
 }
 ```
 
-## Displaying Products
+### For a single product
+
+In [productId] **route.ts**,
 
 ```typescript
-  const [products, setProducts] = useState<Products | null>(null);
+import axios from "axios";
+import { NextResponse } from "next/server";
 
-  useEffect(() => {
-    axios.get("/api/products").then((response) => {
-      setProducts(response.data);
-    });
-  }, []);
+
+export async function GET(req: Request, { params }: { params: { productId: string } }) {
+  try {
+    const response = await axios.get(
+      `https://api.timbu.cloud/products/${params.productId}?organization_id=your-org-id&Appid=your-app-id&Apikey=your-api-key`
+    );
+    
+
+    return NextResponse.json(response.data);
+  } catch (error) {
+    console.log("[PRODUCTID_GET]", error);
+    return new NextResponse("Internal error");
+  }
+}
+
 ```
+
+## Displaying Products
 
 In your **typings.d.ts** file:
 
@@ -140,3 +157,32 @@ interface Category {
     items: Item[];
   }
 ```
+
+In your products component:
+
+```typescript
+  const [products, setProducts] = useState<Products | null>(null);
+
+  useEffect(() => {
+    axios.get("/api/products").then((response) => {
+      setProducts(response.data);
+    });
+  }, []);
+```
+
+Now, you can easily map through the products state and display the data on your site.
+
+## Displaying a single Product
+
+In your dynamic product component,
+
+```typescript
+  const [product, setProduct] = useState<Item | null>(null);
+
+  useEffect(() => {
+    axios.get(`/api/products/${params.productId}`).then((response) => {
+      setProduct(response.data);
+    });
+  }, []);
+```
+
