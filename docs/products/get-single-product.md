@@ -28,8 +28,8 @@ This is a protected endpoint so as part of the request, you need to send `Appid`
 | Parameter        | Type   | Required | Description                      |
 |------------------|--------|----------|----------------------------------|
 | `organization_id`| string | Yes      | The unique identifier for the organization to which the product belongs. |
-| `Appid`          | string | No       | APP ID for authentication |
-| `Apikey`          | string | No       | API KEY for authentication |
+| `Appid`          | string | Yes       | APP ID for authentication |
+| `Apikey`          | string | Yes       | API KEY for authentication |
 
 
 
@@ -37,7 +37,7 @@ This is a protected endpoint so as part of the request, you need to send `Appid`
 ## Example Request
 
 ```bash
-curl -X GET "https://api.timbu.cloud/products/1234?organization_id=123" 
+curl -X GET "https://api.timbu.cloud/products/1234?organization_id=123&Appid=12345&Apikey=1234567890" 
 ```
 
 
