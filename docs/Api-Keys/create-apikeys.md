@@ -39,7 +39,7 @@ Let's review the steps one more time.
 
 -   Find the settings menu item from the sidebar menu.
 -   Click the dropdown and select the advanced menu item.
--   On the page displayed, select 'generte api keys'.
+-   On the page displayed, select 'generate api keys'.
 -   Fill in the form by providing an app name (for identification), and access levels for the key.
 -   Click on 'generate', and then retrieve the keys generated for you.
 ```
