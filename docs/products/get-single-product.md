@@ -10,7 +10,7 @@ This endpoint retrieves details for a particular product.
 
 ## Endpoint
 
-`GET /products/{product_id}`
+`GET /products/{id}`
 
 This is a protected endpoint so as part of the request, you need to send `Appid` and `Apikey` query params
 
@@ -20,7 +20,7 @@ This is a protected endpoint so as part of the request, you need to send `Appid`
 
 | Parameter        | Type   | Required | Description                      |
 |------------------|--------|----------|----------------------------------|
-| `product_id`| string | Yes      | The unique identifier for the product resource. |
+| `id`| string | Yes      | The unique identifier for the product resource. |
 
 
 ### Query Parameters
@@ -37,7 +37,7 @@ This is a protected endpoint so as part of the request, you need to send `Appid`
 ## Example Request
 
 ```bash
-curl -X GET "https://api.timbu.cloud/products/1234?organization_id=123" 
+curl -X GET "https://api.timbu.cloud/products/08d96ffdf?organization_id=123&Appid=12345&Apikey=12345" 
 ```
 
 
