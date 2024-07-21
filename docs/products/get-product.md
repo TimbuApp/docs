@@ -60,6 +60,7 @@ curl -X GET "https://api.timbu.cloud/products?organization_id=123&reverse_sort=f
             "url_slug": "brown-shoe",
             "is_available": true,
             "is_service": false,
+            "current_price": [],
             "previous_url_slugs": null,
             "unavailable": false,
             "unavailable_start": null,
