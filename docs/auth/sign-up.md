@@ -10,9 +10,7 @@ This endpoint allows the creation of a new user. To create a new user, send a PO
 
 ## Endpoint
 
-`GET /products`
-
-This is a protected endpoint so as part of the request, you need to send `Appid` and `Apikey` query params
+`POST /auth/signup`
 
 ## Parameters
 
@@ -26,23 +24,21 @@ The request body should be sent in `application/json` format and must include th
 |-----------------|--------|----------|--------------------------------------------------|
 | `email`         | string | Yes      | The email of the new user.                      |
 | `password`      | string | Yes      | The unique password of the new user.            |
-| `first_name`    | string | Yes      | The first name of the new user.                 |
-| `last_name`     | string | Yes      | The last name of the new user.                  |
-| `phone_number`  | string | Yes      | The phone number of the new user.               |
-| `country_code`  | string | Yes      | The country code of the new user.               |
+| `first_name`    | string | No      | The first name of the new user.                 |
+| `last_name`     | string | No      | The last name of the new user.                  |
+| `phone_number`  | string | No     | The phone number of the new user.               |
+| `country_code`  | string | No     | The country code of the new user.               |
 | `image`         | file   | No       | An image file of the new user (any format).     |
-| `device_id`     | string | Yes      | The ID of the device used during signup.        |
-| `country`       | string | Yes      | The country name of the new user.               |
+| `country`       | string | No     | The country name of the new user.               |
 | `state`         | string | No       | The state name of the new user.                 |
-| `google_id`     | string | No       | The unique ID of the new user's Google account. |
-| `google_image`  | string | No       | The image URL of the user's Google account.     |
+
 
 
 
 ## Example Request
 
 ```bash
-curl -X GET "https://api.timbu.cloud/auth/signup" \
+curl -X POST "https://api.timbu.cloud/auth/signup" \
 -H "Content-Type: application/json" \
 -d '{
   "email": "user@example.com",
@@ -52,9 +48,6 @@ curl -X GET "https://api.timbu.cloud/auth/signup" \
   "phone_number": "1234567890",
   "country_code": "+1",
   "image_url": "https://example.com/image.jpg",
-  "device_id": "device123",
-  "google_id": "google123",
-  "google_image_url": "https://example.com/google_image.jpg"
 }'
 ```
 
@@ -71,8 +64,6 @@ curl -X GET "https://api.timbu.cloud/auth/signup" \
     "phone_number": "1234567890",
     "country_code": "+1",
     "image_url": "https://example.com/image.jpg",
-    "google_id": "google123",
-    "google_image_url": "https://example.com/google_image.jpg"
   },
   "access_token": "eyJhbGci...",
   "refresh_token": "eyJhbGci..."
