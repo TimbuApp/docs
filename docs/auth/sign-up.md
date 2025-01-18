@@ -45,9 +45,6 @@ curl -X POST "https://api.timbu.cloud/auth/signup" \
   "password": "password123",
   "first_name": "John",
   "last_name": "Doe",
-  "phone_number": "1234567890",
-  "country_code": "+1",
-  "image_url": "https://example.com/image.jpg",
 }'
 ```
 
