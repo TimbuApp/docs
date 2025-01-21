@@ -1,7 +1,7 @@
 ---
 id: auth-signup
 title: User Signup
-sidebar_label: User Signup
+sidebar_label: Signup
 ---
 
 This endpoint allows the creation of a new user.
