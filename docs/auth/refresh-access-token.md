@@ -1,6 +1,7 @@
 ---
 id: refresh-access-token
 title: Refresh access token
+description: Learn to use the refresh access token endpoint
 sidebar_label: Refresh access token
 ---
 
@@ -41,6 +42,4 @@ curl -X GET "https://api.timbu.cloud/auth/refresh-access-token"
 | ----- | ------------------------------------------------------------- |
 | `200` | Successful Response. Returns the active user and a new token. |
 | `401` | Unauthenticated                                               |
-| `403` | Invalid credentials                                           |
-| `422` | Validation Error. The request body contains invalid data.     |
 | `500` | Internal Server Error. An error occurred on the server        |

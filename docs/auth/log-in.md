@@ -1,6 +1,7 @@
 ---
 id: auth-login
 title: Login
+description: Learn to use the login endpoint
 sidebar_label: Login
 ---
 
@@ -57,17 +58,3 @@ curl -X POST "https://api.timbu.cloud/auth/signup" \
 | `403` | Invalid credentials                                       |
 | `422` | Validation Error. The request body contains invalid data. |
 | `500` | Internal Server Error. An error occurred on the server    |
-
-### Example Error Response
-
-```bash
-{
-  "detail": [
-    {
-      "loc": ["body", "email"],
-      "msg": "Email is required.",
-      "type": "value_error"
-    }
-  ]
-}
-```

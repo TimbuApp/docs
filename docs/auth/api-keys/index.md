@@ -1,6 +1,7 @@
 ---
 id: api-keys
 title: API keys
+description: Learn about API keys in Timbu
 sidebar_label: API keys
 ---
 

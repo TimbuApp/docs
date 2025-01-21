@@ -1,6 +1,7 @@
 ---
 id: how-auth-works
 title: How authentication works in Timbu
+description: Learn to authentication in Timbu API works
 sidebar_label: How authentication works
 ---
 

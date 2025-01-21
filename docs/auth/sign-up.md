@@ -1,6 +1,7 @@
 ---
 id: auth-signup
 title: User Signup
+description: Learn to use the signup endpoint
 sidebar_label: Signup
 ---
 
@@ -65,17 +66,3 @@ curl -X POST "https://api.timbu.cloud/auth/signup" \
 | `400` | Bad Request. The request was invalid.                     |
 | `404` | Not Found. The resource was not found.                    |
 | `500` | Internal Server Error. An error occurred on the server    |
-
-### Example Error Response
-
-```bash
-{
-  "detail": [
-    {
-      "loc": ["body", "email"],
-      "msg": "Email is required.",
-      "type": "value_error"
-    }
-  ]
-}
-```
