@@ -24,9 +24,10 @@ This endpoint retrieves a product by ID.
 
 ### Query Parameters
 
-| Parameter         | Type   | Required | Description                                        |
-| ----------------- | ------ | -------- | -------------------------------------------------- |
-| `organization_id` | string | Yes      | The ID of the organization the product belongs to. |
+| Parameter         | Type    | Required | Description                                                                                               |
+| ----------------- | ------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| `organization_id` | string  | Yes      | The ID of the organization the product belongs to.                                                        |
+| `with_unique_id`  | boolean | No       | If passed, the endpoint will get the product whose `unique_id` matches the `product_id` in the path param |
 
 ### Example Request
 
