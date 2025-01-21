@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Authentication against TimbuAPI is in two forms - with bearer token or API keys. The bearer token authentication is ideal for almost any usecase. However, API keys are more appropriate if you'd be dealing with only one organization at a time because they're scoped to organizations. More info about API keys in the API keys docs."
+    "description": "Authentication against TimbuAPI is in two forms - with bearer token or API keys. The bearer token authentication is ideal for almost any use case. However, API keys are more appropriate if you'd be dealing with only one organization at a time because they're scoped to organizations. More info about API keys in the API keys docs"
   }
 }
