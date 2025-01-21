@@ -18,9 +18,9 @@ This endpoint retrieves a product by ID.
 
 ### Path Parameters
 
-| Parameter    | Type   | Required | Description                                     |
-| ------------ | ------ | -------- | ----------------------------------------------- |
-| `product_id` | string | Yes      | The unique identifier for the product resource. |
+| Parameter    | Type   | Required | Description     |
+| ------------ | ------ | -------- | --------------- |
+| `product_id` | string | Yes      | The product ID. |
 
 ### Query Parameters
 
@@ -31,8 +31,7 @@ This endpoint retrieves a product by ID.
 ### Example Request
 
 ```bash
-curl -X GET "https://api.timbu.cloud/products/0529002da1b24bc79432071cf412ec13?organization_id=0529002da1b24bc79432071cf412ec13"
-    -H 'Authorization: Bearer <token>' \
+curl -X GET "https://api.timbu.cloud/products/023094402002da1b24bc79432071cf412ec13?organization_id=0529002da1b24bc79432071cf412ec13"
 ```
 
 ### Example Response
@@ -74,6 +73,6 @@ curl -X GET "https://api.timbu.cloud/products/0529002da1b24bc79432071cf412ec13?o
 | ----- | ------------------------------------------------------ | --- |
 | `200` | OK. Request was successful                             |
 | `400` | Bad Request. The request was invalid.                  |
-| `404` | Not Found. The resource was not found.                 |
+| `404` | Not Found. The product was not found.                  |
 | `422` | Validation error.                                      | ß   |
 | `500` | Internal Server Error. An error occurred on the server |

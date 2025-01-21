@@ -6,6 +6,10 @@ sidebar_label: Update product
 
 This endpoint updates product details.
 
+### Endpoint
+
+`PUT` &nbsp; &nbsp; /products/`{product_id}`
+
 ### Headers
 
 | Parameter       | Type   | Required | Description                                     |
@@ -13,9 +17,11 @@ This endpoint updates product details.
 | `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
 | `Content-Type`  | string | Yes      | multipart/form-data                             |
 
-### Endpoint
+### Path Parameters
 
-`PUT` &nbsp; &nbsp; /products/`{product_id}`
+| Parameter    | Type   | Required | Description     |
+| ------------ | ------ | -------- | --------------- |
+| `product_id` | string | Yes      | The product ID. |
 
 ### Body
 

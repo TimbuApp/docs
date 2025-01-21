@@ -6,15 +6,15 @@ sidebar_label: List all products
 
 This endpoint fetches all products in an organization.
 
+### Endpoint
+
+`GET` &nbsp; &nbsp; /products
+
 ### Headers
 
 | Parameter       | Type   | Required | Description                                     |
 | --------------- | ------ | -------- | ----------------------------------------------- |
 | `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
-
-### Endpoint
-
-`GET` &nbsp; &nbsp; /products
 
 ### Query Parameters
 

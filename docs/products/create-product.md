@@ -6,16 +6,16 @@ sidebar_label: Create product
 
 This endpoint creates a product in an organization.
 
+### Endpoint
+
+`POST` &nbsp; &nbsp; /products
+
 ### Headers
 
 | Parameter       | Type   | Required | Description                                     |
 | --------------- | ------ | -------- | ----------------------------------------------- |
 | `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
 | `Content-Type`  | string | Yes      | multipart/form-data                             |
-
-### Endpoint
-
-`POST` &nbsp; &nbsp; /products
 
 ### Body
 
