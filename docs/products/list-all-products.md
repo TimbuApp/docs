@@ -4,17 +4,17 @@ title: List all products
 sidebar_label: List all products
 ---
 
-# List products
+This endpoint fetches all products in an organization.
 
-This endpoint fetches all products in an organization
+### Headers
 
-### Authorization
+| Parameter       | Type   | Required | Description                                     |
+| --------------- | ------ | -------- | ----------------------------------------------- |
+| `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
 
-`Authorization` `string` `header` `required`
+### Endpoint
 
-## Endpoint
-
-`GET` /products
+`GET` &nbsp; &nbsp; /products
 
 ### Query Parameters
 
@@ -31,13 +31,15 @@ This endpoint fetches all products in an organization
 | `reverse_sort`    | bool   | No       | Sorting order of the retrieved items. Default to true (desc)                                                                                     |
 | `debug`           | bool   | No       | Returns debug info. Defaults to false.                                                                                                           |
 
-## Example Request
+### Example Request
 
 ```bash
 curl -X GET "https://api.timbu.cloud/products?organization_id=799bbdca76254f5c83f1d0f35cfb7e30"
+    -H "Authorization: Bearer <token>" \
+    -H "Content-Type: multipart/form-data"
 ```
 
-## Example Response
+### Example Response
 
 ```bash
 {

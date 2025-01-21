@@ -4,17 +4,18 @@ title: Create product
 sidebar_label: Create product
 ---
 
-# Create product
+This endpoint creates a product in an organization.
 
-This endpoint creates a product in an organization
+### Headers
 
-### Authorization
+| Parameter       | Type   | Required | Description                                     |
+| --------------- | ------ | -------- | ----------------------------------------------- |
+| `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
+| `Content-Type`  | string | Yes      | multipart/form-data                             |
 
-`Authorization` `string` `header` `required`
+### Endpoint
 
-## Endpoint
-
-<code>`POST` &nbsp; /products</code>
+`POST` &nbsp; &nbsp; /products
 
 ### Body
 
@@ -30,15 +31,16 @@ This endpoint creates a product in an organization
 | `add_to_index`      | boolean | No       | Tags a product for syncing to the data index.        |
 | `product_image`     | File    | No       | The product image                                    |
 
-## Example request
+### Example Request
 
 ```bash
-curl -X POST "https://api.timbu.cloud/products"
-    --header 'Content-Type: multipart/form-data' \
-    --data '{"name": "Test product", "organization_id": "test123"}
+curl -X POST "https://api.timbu.cloud/products" \\
+    -H 'Authorization: Bearer <token>' \
+    -H 'Content-Type: multipart/form-data' \
+    --data '{"name": "Test product", "organization_id": "test123"} \
 ```
 
-## Example response
+### Example Response
 
 ```bash
 {

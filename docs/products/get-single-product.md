@@ -4,15 +4,17 @@ title: Get Product
 sidebar_label: Get Product
 ---
 
-# Get Product
-
 This endpoint retrieves a product by ID.
 
-## Endpoint
+### Endpoint
 
-`GET /products/{product_id}`
+`GET` &nbsp; &nbsp; /products/`{product_id}`
 
-## Parameters
+### Headers
+
+| Parameter       | Type   | Required | Description                                     |
+| --------------- | ------ | -------- | ----------------------------------------------- |
+| `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
 
 ### Path Parameters
 
@@ -26,13 +28,14 @@ This endpoint retrieves a product by ID.
 | ----------------- | ------ | -------- | -------------------------------------------------- |
 | `organization_id` | string | Yes      | The ID of the organization the product belongs to. |
 
-## Example Request
+### Example Request
 
 ```bash
 curl -X GET "https://api.timbu.cloud/products/0529002da1b24bc79432071cf412ec13?organization_id=0529002da1b24bc79432071cf412ec13"
+    -H 'Authorization: Bearer <token>' \
 ```
 
-## Example Response
+### Example Response
 
 ```sh
 {
