@@ -1,7 +1,7 @@
 ---
 id: get-product
 title: Get Product
-sidebar_label: Get Product
+sidebar_label: Get product
 ---
 
 This endpoint retrieves a product by ID.

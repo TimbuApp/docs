@@ -34,10 +34,11 @@ This endpoint creates a product in an organization.
 ### Example Request
 
 ```bash
-curl -X POST "https://api.timbu.cloud/products" \\
-    -H 'Authorization: Bearer <token>' \
-    -H 'Content-Type: multipart/form-data' \
-    --data '{"name": "Test product", "organization_id": "test123"} \
+curl -X POST "https://api.timbu.cloud/products" \
+    -H "Authorization: Bearer <token>" \
+    -H "Content-Type: multipart/form-data" \
+    -F 'name=Test product' \
+    -F 'organization_id=test123'
 ```
 
 ### Example Response

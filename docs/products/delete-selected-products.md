@@ -1,14 +1,14 @@
 ---
-id: delete-product
-title: Delete Product
-sidebar_label: Delete product
+id: delete-selected-product
+title: Delete Selected Product
+sidebar_label: Delete selected product
 ---
 
-This endpoint deletes a product
+This endpoint deletes a list of products. It also returns the list of invalid product IDs, if any, alongside the IDs of the deleted products.
 
 ### Endpoint
 
-`DELETE` &nbsp; &nbsp; /products/`{product_id}`
+`DELETE` &nbsp; &nbsp; /products/selected/delete
 
 ### Headers
 
@@ -16,29 +16,29 @@ This endpoint deletes a product
 | --------------- | ------ | -------- | ----------------------------------------------- |
 | `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
 
-### Path Parameters
-
-| Parameter    | Type   | Required | Description     |
-| ------------ | ------ | -------- | --------------- |
-| `product_id` | string | Yes      | The product ID. |
-
-### Query Parameters
+### Body
 
 | Parameter         | Type   | Required | Description                                        |
 | ----------------- | ------ | -------- | -------------------------------------------------- |
 | `organization_id` | string | Yes      | The ID of the organization the product belongs to. |
+| `product_id_list` | array  | Yes      | A list of product IDs to delete                    |
 
 ### Example Request
 
 ```bash
-curl -X DELETE "https://api.timbu.cloud/products/023094402002da1b24bc79432071cf412ec13?organization_id=0529002da1b24bc79432071cf412ec13"
-    -H 'Authorization: Bearer <token>' \
+curl -X DELETE "https://api.timbu.cloud/products/selected/delete" \
+    -H "Authorization: Bearer <token>" \
+    -H "Content-Type: application/json" \
+    -d '{"organization_id": "test123", "product_id_list": ["product-id-1", "product-id-n"]}'
 ```
 
 ### Example Response
 
 ```sh
-    {"message": "Product deleted successfully"}
+    {
+        "message": "Products deleted successfully", "deleted: []",
+        "not_found": []
+    }
 ```
 
 ### Response Codes
@@ -46,5 +46,4 @@ curl -X DELETE "https://api.timbu.cloud/products/023094402002da1b24bc79432071cf4
 | Code  | Description                                            |
 | ----- | ------------------------------------------------------ |
 | `200` | OK. Request was successful                             |
-| `404` | Not Found. The product was not found.                  |
 | `500` | Internal Server Error. An error occurred on the server |

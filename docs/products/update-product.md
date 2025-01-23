@@ -41,10 +41,11 @@ This endpoint updates product details.
 ## Example Request
 
 ```bash
-curl -X POST "https://api.timbu.cloud/products/123"
-    --H "Authorization: Bearer <token>" \
-    --H "Content-Type: multipart/form-data" \
-    --data '{"name": "Updated product name", "organization_id": "test123"}
+curl -X POST "https://api.timbu.cloud/products" \
+    -H "Authorization: Bearer <token>" \
+    -H "Content-Type: multipart/form-data" \
+    -F 'name=Updated product name' \
+    -F 'organization_id=test123'
 ```
 
 ### Example Response
