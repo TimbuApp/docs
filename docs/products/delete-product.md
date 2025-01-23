@@ -47,4 +47,4 @@ curl -X DELETE "https://api.timbu.cloud/products/023094402002da1b24bc79432071cf4
 | ----- | ------------------------------------------------------ |
 | `200` | OK. Request was successful                             |
 | `404` | Not Found. The product was not found.                  |
-| `500` | Internal Server Error. An error occurred on the server |
+| `500` | Internal server error. An error occurred on the server |

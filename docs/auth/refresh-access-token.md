@@ -42,4 +42,4 @@ curl -X GET "https://api.timbu.cloud/auth/refresh-access-token"
 | ----- | ------------------------------------------------------------- |
 | `200` | Successful Response. Returns the active user and a new token. |
 | `401` | Unauthenticated                                               |
-| `500` | Internal Server Error. An error occurred on the server        |
+| `500` | Internal server error. An error occurred on the server        |

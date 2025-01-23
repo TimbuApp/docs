@@ -57,4 +57,4 @@ curl -X POST "https://api.timbu.cloud/auth/signup" \
 | `400` | Bad Request. The request was invalid.                     |
 | `403` | Invalid credentials                                       |
 | `422` | Validation Error. The request body contains invalid data. |
-| `500` | Internal Server Error. An error occurred on the server    |
+| `500` | Internal server error. An error occurred on the server    |

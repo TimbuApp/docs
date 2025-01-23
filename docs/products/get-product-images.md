@@ -44,4 +44,4 @@ curl -X GET "https://api.timbu.cloud/products/product123/images"
 | ----- | ------------------------------------------------------ |
 | `200` | OK. Request was successful                             |
 | `422` | Validation error.                                      |
-| `500` | Internal Server Error. An error occurred on the server |
+| `500` | Internal server error. An error occurred on the server |

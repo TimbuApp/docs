@@ -87,4 +87,4 @@ curl -X POST "https://api.timbu.cloud/products" \
 | `201` | OK. Product created successfully                       |
 | `400` | Bad Request. The request was invalid.                  |
 | `422` | Validation error.                                      |
-| `500` | Internal Server Error. An error occurred on the server |
+| `500` | Internal server error. An error occurred on the server |

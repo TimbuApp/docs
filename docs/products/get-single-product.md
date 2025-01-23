@@ -76,4 +76,4 @@ curl -X GET "https://api.timbu.cloud/products/023094402002da1b24bc79432071cf412e
 | `400` | Bad Request. The request was invalid.                  |
 | `404` | Not Found. The product was not found.                  |
 | `422` | Validation error.                                      | ß   |
-| `500` | Internal Server Error. An error occurred on the server |
+| `500` | Internal server error. An error occurred on the server |

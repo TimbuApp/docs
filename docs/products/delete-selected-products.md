@@ -46,4 +46,4 @@ curl -X DELETE "https://api.timbu.cloud/products/selected/delete" \
 | Code  | Description                                            |
 | ----- | ------------------------------------------------------ |
 | `200` | OK. Request was successful                             |
-| `500` | Internal Server Error. An error occurred on the server |
+| `500` | Internal server error. An error occurred on the server |

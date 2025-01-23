@@ -90,4 +90,4 @@ curl -X GET "https://api.timbu.cloud/products?organization_id=799bbdca76254f5c83
 | `400` | Bad Request. The request was invalid.                  |
 | `404` | Not Found. The resource was not found.                 |
 | `422` | Validation error.                                      |
-| `500` | Internal Server Error. An error occurred on the server |
+| `500` | Internal server error. An error occurred on the server |
