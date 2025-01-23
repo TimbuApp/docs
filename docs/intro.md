@@ -8,7 +8,7 @@ Learn how to integrate our API into your platform
 
 ### Requests and Responses
 
-The request body and response data are formatted as JSON _unless otherwise stated. As such, the content type for request and responses will be `application/json` \_unless other stated_ in the endpoint documentation.
+The request body and response data are formatted as JSON _unless otherwise stated_. As such, the content type for request and responses will be `application/json` _unless other stated_ in the endpoint documentation.
 
 #### Paginated responses
 
