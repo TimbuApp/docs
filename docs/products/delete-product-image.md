@@ -39,11 +39,8 @@ curl -X DELETE "https://api.timbu.cloud/products/image/product123/image-1?organi
 
 ### Example Response
 
-```sh
-    {
-        "message": "Products deleted successfully", "deleted: []",
-        "not_found": []
-    }
+```bash
+    {"message": "Image deleted successfully"}
 ```
 
 ### Response Codes
