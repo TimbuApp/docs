@@ -5,15 +5,9 @@ description: Learn to authentication in Timbu API works
 sidebar_label: How authentication works
 ---
 
-### Token authentication
-
-For token authentication, two different tokens are issued by the API - access token and refresh token. The access token (valid for 15 minutes) is sent in the `Authorization` header in the <code>Bearer `token`</code> format. The refresh token (valid for a week), is issued as a response cookie, but is also provided in the JSON response. The access token can be refreshed **if the refresh token is still valid** with the [refresh access token endpoint](/api/auth/refresh-access-token).
-
-If you're using Timbu with a client application (that is, from a UI), you need to allow your browser to send cookies to the server. In [Axios](https://axios-http.com/docs/intro), you do that by setting the `withCredentials` field in the [axios config](https://axios-http.com/docs/req_config) to `true`. In the [native fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), set the [`credentials`](https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials) field in the request payload to `include`.
-
 ### API key authentication
 
-API keys are scoped to organizations, that is, an API key created for an organization can only be used to access data in that organization. They're sent via the request headers in the format below:
+API keys are scoped to organizations, that is, an API key created for an organization can only be used to access data in that organization. They're sent via the request headers in the format below. You can manage your API keys from [your dashboard](https://app.timbu.cloud/dashboard).
 
 ```bash title="request headers"
 
