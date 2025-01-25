@@ -1,5 +1,6 @@
 ---
 id: list-all-api-keys
+sidebar_position: 2
 title: List all API keys
 sidebar_label: List all API keys
 ---

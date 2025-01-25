@@ -1,5 +1,6 @@
 ---
 id: generate-api-key
+sidebar_position: 1
 title: Generate API key
 sidebar_label: Generate API key
 ---
