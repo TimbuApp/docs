@@ -9,7 +9,7 @@ This endpoint is used to login. It returns an access and refresh token that is u
 
 ### Endpoint
 
-`POST /auth/login`
+`POST` /auth/login
 
 ### Request Body
 

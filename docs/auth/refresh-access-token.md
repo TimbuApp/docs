@@ -9,7 +9,7 @@ All issued access tokens are valid for 15 mins after issuance. This endpoint all
 
 ### Endpoint
 
-`GET /auth/refresh-access-token`
+`GET` /auth/refresh-access-token
 
 ### Example Request
 

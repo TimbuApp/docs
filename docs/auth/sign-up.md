@@ -9,7 +9,7 @@ This endpoint allows the creation of a new user.
 
 ### Endpoint
 
-`POST /auth/signup`
+`POST` /auth/signup
 
 ### Request Body
 
