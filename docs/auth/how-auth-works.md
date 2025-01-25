@@ -13,14 +13,13 @@ If you're using Timbu with a client application (that is, from a UI), you need t
 
 ### API key authentication
 
-API keys are scoped to an organization. They're sent via the request headers alongside the organization ID.
+API keys are scoped to organizations, that is, an API key created for an organization can only be used to access data in that organization. They're sent via the request headers in the format below:
 
 ```bash title="request headers"
 
     {
         "x-api-key": <YOUR-API-KEY>,
-        "x-app-id": <YOUR-APP-ID>, # gotten when you generate an API key
-        "x-organization-id": <YOUR-ORGANIZATION-ID>,
+        "x-app-id": <YOUR-APP-ID>, # gotten when an API key is generated
     }
 
 ```
