@@ -1,15 +1,41 @@
 ---
-title: What is Timbu
+title: Introduction
 hide_table_of_contents: true
 sidebar_position: 1
 ---
 
-# What is Timbu
+Learn how to integrate our API into your platform
 
-### Welcome to Timbu Developer Documentation
+### Requests and Responses
 
-Timbu API is built to help you unleash your business true potential with innovative solutions and it is powered to help you streamline your operations and manage you administrative task efficiently.
+The request body and response data are formatted as JSON _unless otherwise stated_. As such, the content type for request and responses will be `application/json` _unless other stated_ in the endpoint documentation.
 
-As a developer, you can use this powerful tool to manage your business finance, track and collect debt, create and send invoice to your customers.
+#### Paginated responses
 
-You can jump straight to reading the [documentation](/) for each of the endpoints or rather take a [step-by-step](/) tutorial on how to build with our api using postman.
+The response format for a paginated endpoint is:
+
+```bash title="Paginated response format"
+    {
+        "page": 2,
+        "size": 50,
+        "total": 2,
+        "debug": null, # returns debug information, null for most endpoints and only sent when requested by passing `debug=true` in query parameter.
+        "previous_page": "/<url>?page=<prev-page>&size=<size>",
+        "previous_page": "/<url>?page=<next-page>&size=<size>",
+        "items": [],
+    }
+```
+
+### Validation error format
+
+```bash title="Validation error format"
+    {
+        "detail": [
+            {
+                "loc": ["body", "<field>"],
+                "msg": "<field> is required.",
+                "type": "value_error"
+            }
+        ]
+    }
+```

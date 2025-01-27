@@ -1,14 +1,14 @@
 ---
-id: create-product
-title: Create product
-sidebar_label: Create product
+id: update-product
+title: Update product
+sidebar_label: Update product
 ---
 
-This endpoint creates a product in an organization.
+This endpoint updates product details.
 
 ### Endpoint
 
-`POST` &nbsp; &nbsp; /products
+`PUT` &nbsp; &nbsp; /products/`{product_id}`
 
 ### Headers
 
@@ -17,27 +17,34 @@ This endpoint creates a product in an organization.
 | `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
 | `Content-Type`  | string | Yes      | multipart/form-data                             |
 
+### Path Parameters
+
+| Parameter    | Type   | Required | Description     |
+| ------------ | ------ | -------- | --------------- |
+| `product_id` | string | Yes      | The product ID. |
+
 ### Body
 
-| Parameter           | Type    | Required | Description                                          |
-| ------------------- | ------- | -------- | ---------------------------------------------------- |
-| `organization_id`   | string  | Yes      | The ID of the organization the product belongs to    |
-| `name`              | string  | Yes      | The name of the product                              |
-| `description`       | string  | No       | The description of the product                       |
-| `parent_product_id` | string  | No       | The ID of the parent product to link to              |
-| `url_slug`          | string  | No       | The URL slug for the product                         |
-| `category_ids`      | array   | No       | The categories to add product to.                    |
-| `is_service`        | boolean | No       | Identifies a product as a service. Default is false. |
-| `add_to_index`      | boolean | No       | Tags a product for syncing to the data index.        |
-| `product_image`     | File    | No       | The product image                                    |
+| Parameter           | Type    | Required | Description                                                  |
+| ------------------- | ------- | -------- | ------------------------------------------------------------ |
+| `organization_id`   | string  | Yes      | The ID of the organization the product belongs to            |
+| `name`              | string  | No       | The name of the product                                      |
+| `description`       | string  | No       | The description of the product                               |
+| `parent_product_id` | string  | No       | The ID of the parent product to link to                      |
+| `child_product_ids` | string  | No       | The IDs of the products to reference as sub-products to this |
+| `url_slug`          | string  | No       | The URL slug for the product                                 |
+| `is_available`      | boolean | No       | Flag to set product availability                             |
+| `is_service`        | boolean | No       | Identifies a product as a service. Default is false          |
+| `add_to_index`      | boolean | No       | Tags a product for syncing to the data index                 |
+| `product_image`     | File    | No       | The product image                                            |
 
-### Example Request
+## Example Request
 
 ```bash
 curl -X POST "https://api.timbu.cloud/products" \
     -H "Authorization: Bearer <token>" \
     -H "Content-Type: multipart/form-data" \
-    -F 'name=Test product' \
+    -F 'name=Updated product name' \
     -F 'organization_id=test123'
 ```
 
