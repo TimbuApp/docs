@@ -4,27 +4,25 @@ title: Logout User
 sidebar_label: Logout User
 ---
 
-# Logout User
+## Logout User
 
-This endpoint logs out an authenticated user.
-
-## Endpoint
-
+### Endpoint
 `POST /auth/logout`
 
-## Parameters
+### Description
+This endpoint allows an authenticated user to log out. The refresh token associated with the user is deleted, and the refresh token cookie is invalidated.
 
-| Parameter         | Type   | Location | Required | Description                              |
-|-------------------|--------|----------|----------|------------------------------------------|
-| `refresh_token`  | string | Cookie   | No      | The refresh token associated with the user. |
+### Request Body
 
-## Example Request
+This endpoint does not require a request body.
 
-```bash
-curl -X POST "https://api.timbu.cloud/auth/logout"
+### Example Request
+```jsx title="response"
+curl -X POST "https://api.timbu.cloud/auth/logout" \
+-H "Authorization: Bearer <access_token>"
 ```
 
-## Example Response
+### Response Example
 
 ```jsx title="response"
 {
@@ -36,8 +34,6 @@ curl -X POST "https://api.timbu.cloud/auth/logout"
 
 | Code        | Description   |
 |------------------|--------|
-| `200`| Successful Response. The user has been logged out successfully. |
-| `422`    | Validation Error. The request body contains invalid data. |
-| `400`    | Bad Request. The request was invalid. |
-| `404`          | Not Found. The resource was not found. |
+| `200`| User logged out successfully. |
+| `404`          | User not found. |
 | `500`          | Internal Server Error. An error occurred on the server |

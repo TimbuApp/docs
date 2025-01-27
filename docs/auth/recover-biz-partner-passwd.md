@@ -23,50 +23,35 @@ The request body should be sent in `application/json` format and must include th
 | Parameter         | Type   | Required | Description                                              |
 |-------------------|--------|----------|----------------------------------------------------------|
 | `email`          | string | Yes      | The email of the business partner to recover the password for. |
-| `organization_id`| string | Yes      | The ID of the organization the business partner belongs to. |
+| `organization_id`| string | Yes      | The ID of the organization the business partner |
 | `app_url`        | string | Yes      | The URL of the application for password recovery.        |
-| `app_name`       | string | Yes      | The name of the application for password recovery.       |
+| `app_name`       | string | No      | The name of the application.       |
 
 ## Example Request Body
 
 ```bash
-curl -X GET "https://api.timbu.cloud/auth/recover-biz_partner-password" \
---H "Content-Type: application/json" \
+curl -X POST "https://api.timbu.cloud/auth/recover-biz_partner-password" \
+-H "Content-Type: application/json" \
 -d '{
-  "email": "user@example.com",
-  "organization_id": "org123",
-  "app_url": "https://example.com/recover",
-  "app_name": "MyApp"
+  "email": "bizpartner@example.com",
+  "organization_id": "org_12345",
+  "app_url": "https://example.com",
+  "app_name": "Example App"
 }'
 ```
 
 ## Example Response
 
 ```jsx title="response"
-"Recovery email sent successfully."
+{
+  "message": "Please Check your email to reset your password!"
+}
 ```
 
 ### Response Codes
 
 | Code        | Description   |
 |------------------|--------|
-| `200`| Successful Response. The recovery email has been sent successfully. |
-| `422`    | Validation Error. The request body contains invalid data. |
+| `200`| Success. A password reset link has been sent via email. |
 | `400`    | Bad Request. The request was invalid. |
-| `404`          | Not Found. The resource was not found. |
 | `500`          | Internal Server Error. An error occurred on the server |
-
-### Example Error Response
-
-```jsx title="response"
-{
-  "detail": [
-    {
-      "loc": ["body", "email"],
-      "msg": "Email is required.",
-      "type": "value_error"
-    }
-  ]
-}
-
-```

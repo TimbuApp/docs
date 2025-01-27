@@ -4,68 +4,38 @@ title: Login For Swagger UI
 sidebar_label: Swagger UI Login
 ---
 
-# Login For Swagger UI
+## Login for Swagger UI
 
-This endpoint allows users to log in using the SwaggerUI Authorize feature.
-
-## Endpoint
-
+### Endpoint
 `POST /token`
 
-## Parameters
+### Description
+This endpoint allows users to log in using the Swagger UI's "Authorize" feature. It accepts a username and password, verifies the credentials, and returns an access token and refresh token.
 
-This endpoint does not require query parameters.
+### Request Body
 
-## Request Body
+The request expects the following form parameters:
 
-The request body should be sent in `application/x-www-form-urlencoded` format and must include the following fields:
+| Parameter     | Type   | Required | Description               |
+|---------------|--------|----------|---------------------------|
+| `username`    | string | Yes      | The username (email) of the user. |
+| `password`    | string | Yes      | The password of the user. |
 
-| Parameter      | Type   | Required | Description                                         |
-|----------------|--------|----------|-----------------------------------------------------|
-| `grant_type`   | string | Yes      | Must be set to `password`.                         |
-| `username`     | string | Yes      | The username of the user.                          |
-| `password`     | string | Yes      | The password of the user.                          |
-| `scope`        | string | No       | The scope of the access request.                   |
-| `client_id`    | string | No       | The client ID for the request (optional).          |
-| `client_secret`| string | No       | The client secret for the request (optional).      |
-
-### Example Request Body
+### Example Request
 
 ```bash
 curl -X POST "https://api.timbu.cloud/token" \
 -H "Content-Type: application/x-www-form-urlencoded" \
--d "grant_type=password&username=user@example.com&password=securepassword&scope=&client_id=&client_secret="
+-d "username=user@example.com&password=password123"
 ```
 
 ## Example Response
 
 ```jsx title="response"
 {
-  "access_token": "eyJhbGciOiJIUzI1...",
-  "token_type": "bearer"
+  "access_token": "your_access_token_here",
+  "token_type": "bearer",
+  "refresh_token": "your_refresh_token_here"
 }
 ```
 
-### Response Codes
-
-| Code        | Description   |
-|------------------|--------|
-| `200`| Successful Response. The user has been logged in successfully. |
-| `422`    | Validation Error. The request body contains invalid data. |
-| `400`    | Bad Request. The request was invalid. |
-| `404`          | Not Found. The resource was not found. |
-| `500`          | Internal Server Error. An error occurred on the server |
-
-### Example Error Response
-
-```jsx title="response"
-{
-  "detail": [
-    {
-      "loc": ["body", "username"],
-      "msg": "Username is required.",
-      "type": "value_error"
-    }
-  ]
-}
-```

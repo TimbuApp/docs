@@ -4,27 +4,21 @@ title: Magic Login
 sidebar_label: Magic Login
 ---
 
-# Magic Login
+## Magic Login
 
-This endpoint allows users to log in using a magic link or token.
-
-## Endpoint
-
+### Endpoint
 `POST /auth/magic`
 
-## Parameters
+### Description
+This endpoint allows a user to log in using a magic token. The user’s credentials are validated, and upon successful validation, the user is issued an access token and a refresh token for subsequent requests. The refresh token is set in a cookie, and the user is redirected to a specified URL.
 
-This endpoint does not require query parameters.
+### Request Body
 
-## Request Body
-
-The request body should be sent in `application/json` format and must include the following fields:
-
-| Parameter         | Type   | Required | Description                                       |
-|-------------------|--------|----------|---------------------------------------------------|
-| `token`          | string | Yes      | The magic login token provided to the user.       |
-| `organization_id`| string | Yes      | The ID of the organization the user belongs to.   |
-| `redirect_url`   | string | Yes      | The URL to redirect the user to after login.      |
+| Parameter          | Type   | Required | Description                                           |
+|--------------------|--------|----------|-------------------------------------------------------|
+| `token`            | string | Yes      | The magic token used for login.                       |
+| `organization_id`  | string | Yes      | The ID of the organization the user is associated with. |
+| `redirect_url`     | string | No       | The URL to redirect the user after successful login.  |
 
 ### Example Request Body
 
@@ -32,8 +26,8 @@ The request body should be sent in `application/json` format and must include th
 curl -X POST "https://api.timbu.cloud/auth/magic" \
 -H "Content-Type: application/json" \
 -d '{
-  "token": "magic-login-token",
-  "organization_id": "org123",
+  "token": "magic_token_value",
+  "organization_id": "org_12345",
   "redirect_url": "https://example.com/dashboard"
 }'
 ```
@@ -42,7 +36,15 @@ curl -X POST "https://api.timbu.cloud/auth/magic" \
 
 ```jsx title="response"
 {
-  "message": "Magic login successful."
+  "data": {
+    "id": "user_id_123",
+    "email": "user@example.com",
+    "first_name": "John",
+    "last_name": "Doe"
+  },
+  "access_token": "access_token_value",
+  "refresh_token": "refresh_token_value",
+  "redirect_url": "https://example.com/redirect"
 }
 ```
 
@@ -51,8 +53,7 @@ curl -X POST "https://api.timbu.cloud/auth/magic" \
 | Code        | Description   |
 |------------------|--------|
 | `200`| Successful Response. The magic login was successful. |
-| `422`    | Validation Error. The request body contains invalid data. |
-| `400`    | Bad Request. The request was invalid. |
+| `401`    | Invalid or expired token. |
 | `404`          | Not Found. The resource was not found. |
 | `500`          | Internal Server Error. An error occurred on the server |
 

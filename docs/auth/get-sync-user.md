@@ -4,57 +4,58 @@ title: Sync Get User
 sidebar_label: Get User
 ---
 
-# Sync Get User
+## Sync Get User
 
-This endpoint retrieves user details by email and organization ID.
-
-## Endpoint
-
+### Endpoint
 `GET /auth/sync/user`
 
-## Parameters
+### Description
+This endpoint allows retrieving user details, along with their organization and invite status, based on the provided email and organization ID.
 
-The following query parameters are required:
+### Request Parameters
 
-| Parameter         | Type   | Location | Required | Description                               |
-|-------------------|--------|----------|----------|-------------------------------------------|
-| `email`          | string | Query    | Yes      | The email of the user to retrieve.       |
-| `organization_id`| string | Query    | Yes      | The ID of the organization the user belongs to. |
+| Parameter          | Type   | Required | Description                                               |
+|--------------------|--------|----------|-----------------------------------------------------------|
+| `email`            | string | Yes      | The email of the user.                                    |
+| `organization_id`  | string | Yes      | The ID of the organization the user belongs to.           |
 
 ### Example Request
 
 ```bash
-curl -X GET "https://api.timbu.cloud/auth/sync/user?email=user@example.com&organization_id=org123" \
--H "Content-Type: application/json"
+curl -X GET "https://api.timbu.cloud/auth/sync/user?email=user@example.com&organization_id=org_12345"
 ```
 
 ## Example Response
 
 ```jsx title="response"
-"User details retrieved successfully."
+{
+  "user": {
+    "id": "user_123",
+    "email": "user@example.com",
+    "first_name": "John",
+    "last_name": "Doe"
+  },
+  "invite": {
+    "id": "invite_123",
+    "organization_id": "org_12345",
+    "user_id": "user_123",
+    "role_id": "role_123",
+    "is_accepted": true,
+    "is_deleted": false
+  },
+  "user_org": {
+    "id": "org_user_123",
+    "organization_id": "org_12345",
+    "user_id": "user_123",
+    "role_id": "role_123"
+  }
+}
 ```
 
 ### Response Codes
 
 | Code        | Description   |
 |------------------|--------|
-| `200`| Successful Response. The business partner has logged in successfully. |
-| `422`    | Validation Error. The request body contains invalid data. |
-| `400`    | Bad Request. The request was invalid. |
-| `404`          | Not Found. The resource was not found. |
+| `200`| Successfully fetched the user, invite, and organization details. |
+| `404`          | User not found. |
 | `500`          | Internal Server Error. An error occurred on the server |
-
-### Example Error Response
-
-```jsx title="response"
-{
-  "detail": [
-    {
-      "loc": ["query", "email"],
-      "msg": "Email is required.",
-      "type": "value_error"
-    }
-  ]
-}
-
-```
