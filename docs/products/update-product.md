@@ -12,10 +12,9 @@ This endpoint updates product details.
 
 ### Headers
 
-| Parameter       | Type   | Required | Description                                     |
-| --------------- | ------ | -------- | ----------------------------------------------- |
-| `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
-| `Content-Type`  | string | Yes      | multipart/form-data                             |
+| Parameter      | Type   | Required | Description         |
+| -------------- | ------ | -------- | ------------------- |
+| `Content-Type` | string | Yes      | multipart/form-data |
 
 ### Path Parameters
 

@@ -10,12 +10,6 @@ This endpoint returns the URLs of product images.
 
 `GET` &nbsp; &nbsp; /products/`{product_id}`/images
 
-### Headers
-
-| Parameter       | Type   | Required | Description                                     |
-| --------------- | ------ | -------- | ----------------------------------------------- |
-| `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
-
 ### Query Parameters
 
 | Parameter         | Type   | Required | Description                                       |

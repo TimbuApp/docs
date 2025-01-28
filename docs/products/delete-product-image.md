@@ -10,12 +10,6 @@ This endpoint deletes a product's image.
 
 `DELETE` &nbsp; &nbsp; /products/image/`{product_id}`/`{filename}`
 
-### Headers
-
-| Parameter       | Type   | Required | Description                                     |
-| --------------- | ------ | -------- | ----------------------------------------------- |
-| `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
-
 ### Path Parameters
 
 | Parameter    | Type   | Required | Description                          |

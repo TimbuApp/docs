@@ -10,12 +10,6 @@ This endpoint retrieves a product by ID.
 
 `GET` &nbsp; &nbsp; /products/`{product_id}`
 
-### Headers
-
-| Parameter       | Type   | Required | Description                                     |
-| --------------- | ------ | -------- | ----------------------------------------------- |
-| `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
-
 ### Path Parameters
 
 | Parameter    | Type   | Required | Description     |

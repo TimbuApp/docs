@@ -10,12 +10,6 @@ This endpoint deletes a list of products. It also returns the list of invalid pr
 
 `DELETE` &nbsp; &nbsp; /products/selected/delete
 
-### Headers
-
-| Parameter       | Type   | Required | Description                                     |
-| --------------- | ------ | -------- | ----------------------------------------------- |
-| `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
-
 ### Body
 
 | Parameter         | Type   | Required | Description                                        |

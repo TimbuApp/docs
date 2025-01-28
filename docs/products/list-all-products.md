@@ -10,12 +10,6 @@ This endpoint fetches all products in an organization.
 
 `GET` &nbsp; &nbsp; /products
 
-### Headers
-
-| Parameter       | Type   | Required | Description                                     |
-| --------------- | ------ | -------- | ----------------------------------------------- |
-| `Authorization` | string | Yes      | The access token in the 'Bearer `token`' format |
-
 ### Query Parameters
 
 | Parameter         | Type   | Required | Description                                                                                                                                      |
