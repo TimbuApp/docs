@@ -9,6 +9,8 @@ sidebar_label: How authentication works
 
 API keys are scoped to organizations, that is, an API key created for an organization can only be used to access data in that organization. They're sent via the request headers in the format below. You can manage your API keys from [your dashboard](https://app.timbu.cloud/dashboard).
 
+Note: Every request should have your API key credentials in the request headers
+
 ```bash title="request headers"
 
     {
