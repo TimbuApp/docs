@@ -4,17 +4,13 @@ title: Recover Business Partner Password
 sidebar_label: Recover Password
 ---
 
-# Recover Business Partner Password
+# Recover Biz Partner Password
 
-This endpoint allows a business partner to initiate a password recovery process. To recover the password, send a POST request to the `/auth/recover-biz_partner-password` endpoint with the required request body.
+This endpoint allows a business partner to request a password recovery. A recovery email will be sent to the business partner.
 
 ## Endpoint
 
 `POST /auth/recover-biz_partner-password`
-
-## Parameters
-
-This endpoint does not require query parameters.
 
 ## Request Body
 
@@ -22,10 +18,10 @@ The request body should be sent in `application/json` format and must include th
 
 | Parameter         | Type   | Required | Description                                              |
 |-------------------|--------|----------|----------------------------------------------------------|
-| `email`          | string | Yes      | The email of the business partner to recover the password for. |
-| `organization_id`| string | Yes      | The ID of the organization the business partner |
-| `app_url`        | string | Yes      | The URL of the application for password recovery.        |
-| `app_name`       | string | No      | The name of the application.       |
+| `email`          | string | Yes      | The email of the business partner. |
+| `organization_id`| string | Yes      | The ID of the organization the business partner belongs to. |
+| `app_url`        | string | Yes      | The URL of the application for password recovery. recovery.        |
+| `app_name`       | string | No      | The name of the application (optional).       |
 
 ## Example Request Body
 
