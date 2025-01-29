@@ -21,7 +21,8 @@ This endpoint deletes a list of products. It also returns the list of invalid pr
 
 ```bash
 curl -X DELETE "https://api.timbu.cloud/products/selected/delete" \
-    -H "Authorization: Bearer <token>" \
+    -H "x-api-key: <API-KEY>"
+    -H "x-app-id: <APP-ID>"
     -H "Content-Type: application/json" \
     -d '{"organization_id": "test123", "product_id_list": ["product-id-1", "product-id-n"]}'
 ```

@@ -29,7 +29,8 @@ This endpoint fetches all products in an organization.
 
 ```bash
 curl -X GET "https://api.timbu.cloud/products?organization_id=799bbdca76254f5c83f1d0f35cfb7e30"
-    -H "Authorization: Bearer <token>"
+    -H "x-api-key: <API-KEY>"
+    -H "x-app-id: <APP-ID>"
 ```
 
 ### Example Response

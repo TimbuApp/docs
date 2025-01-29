@@ -27,6 +27,8 @@ This endpoint retrieves a product by ID.
 
 ```bash
 curl -X GET "https://api.timbu.cloud/products/023094402002da1b24bc79432071cf412ec13?organization_id=0529002da1b24bc79432071cf412ec13"
+    -H "x-api-key: <API-KEY>"
+    -H "x-app-id: <APP-ID>"
 ```
 
 ### Example Response

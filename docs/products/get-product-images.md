@@ -22,7 +22,8 @@ This endpoint returns the URLs of product images.
 
 ```bash
 curl -X GET "https://api.timbu.cloud/products/product123/images"
-    -H "Authorization: Bearer <token>"
+    -H "x-api-key: <API-KEY>"
+    -H "x-app-id: <APP-ID>"
 ```
 
 ### Example Response

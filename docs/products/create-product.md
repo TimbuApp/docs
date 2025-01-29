@@ -34,7 +34,8 @@ This endpoint creates a product in an organization.
 
 ```bash
 curl -X POST "https://api.timbu.cloud/products" \
-    -H "Authorization: Bearer <token>" \
+    -H "x-api-key: <API-KEY>"
+    -H "x-app-id: <APP-ID>"
     -H "Content-Type: multipart/form-data" \
     -F 'name=Test product' \
     -F 'organization_id=test123'

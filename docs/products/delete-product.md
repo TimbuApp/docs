@@ -26,7 +26,8 @@ This endpoint deletes a product
 
 ```bash
 curl -X DELETE "https://api.timbu.cloud/products/023094402002da1b24bc79432071cf412ec13?organization_id=0529002da1b24bc79432071cf412ec13"
-    -H 'Authorization: Bearer <token>' \
+    -H "x-api-key: <API-KEY>"
+    -H "x-app-id: <APP-ID>"
 ```
 
 ### Example Response

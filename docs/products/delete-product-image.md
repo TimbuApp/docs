@@ -27,7 +27,8 @@ This endpoint deletes a product's image.
 
 ```bash
 curl -X DELETE "https://api.timbu.cloud/products/image/product123/image-1?organization_id=org123" \
-    -H "Authorization: Bearer <token>" \
+    -H "x-api-key: <API-KEY>"
+    -H "x-app-id: <APP-ID>"
     -H "Content-Type: application/json" \
 ```
 
