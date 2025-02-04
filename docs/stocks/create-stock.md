@@ -12,22 +12,25 @@ This endpoint creates a stock for a product
 
 ### Body
 
-| Parameter         | Type   | Required | Description                                                                                                                      |
-| ----------------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `name`            | string | No       | The name of the stock                                                                                                            |
-| `quantity`        | number | Yes      | The quantity of the stock                                                                                                        |
-| `buying_price`    | number | Yes      | The buying price of the stock                                                                                                    |
-| `currency_code`   | string | Yes      | The currency code for the stock buying price                                                                                     |
-| `supplier_id`     | string | No       | The ID of the supplier, if any                                                                                                   |
-| `buying_date`     | string | No       | The date the stock was bought                                                                                                    |
-| `product_id`      | string | Yes      | The ID of the product                                                                                                            |
-| `organization_id` | string | Yes      | The ID of the organization                                                                                                       |
-| `timeslots`       | array  | No       | The available timeslots for stock with the fields = day_of_week: Any day of the week in lowercase, start (time), and end (time). |
+| Parameter         | Type   | Required | Description                                                                                     |
+| ----------------- | ------ | -------- | ----------------------------------------------------------------------------------------------- |
+| `name`            | string | No       | The name of the stock                                                                           |
+| `quantity`        | number | Yes      | The quantity of the stock                                                                       |
+| `buying_price`    | number | Yes      | The buying price of the stock                                                                   |
+| `currency_code`   | string | Yes      | The currency code for the stock buying price                                                    |
+| `supplier_id`     | string | No       | The ID of the supplier, if any                                                                  |
+| `buying_date`     | string | No       | The date the stock was bought                                                                   |
+| `product_id`      | string | Yes      | The ID of the product                                                                           |
+| `organization_id` | string | Yes      | The ID of the organization                                                                      |
+| `timeslots[]`     | array  | No       | An array of timeslot objects, each representing an available time period. Each object contains: |
+|                   |        |          | `day_of_week` (string, required): The day of the week in lowercase.                             |
+|                   |        |          | `start` (time, required): The start time of the slot                                            |
+|                   |        |          | `end` (time, required): The end time of the slot                                                |
 
 ### Example Request
 
 ```bash
-curl -X POST "https://api.timbu.cloud/products" \
+curl -X POST "https://api.timbu.cloud/stocks" \
     -H "x-api-key: <API-KEY>" \
     -H "x-app-id: <APP-ID>" \
     -H "Content-Type: application/json" \
