@@ -31,7 +31,8 @@ curl -X DELETE "https://api.timbu.cloud/products/selected/delete" \
 
 ```sh
     {
-        "message": "Products deleted successfully", "deleted: []",
+        "message": "Products deleted successfully",
+        "deleted: []",
         "not_found": []
     }
 ```
