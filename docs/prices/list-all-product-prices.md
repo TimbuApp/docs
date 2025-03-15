@@ -1,14 +1,14 @@
 ---
-id: list-product-stocks
-title: List product stocks
-sidebar_label: List product stocks
+id: list-product-prices
+title: List Product Prices
+sidebar_label: List product prices
 ---
 
-This endpoint fetches all product stocks.
+This endpoint fetches all product prices.
 
 ### Endpoint
 
-`GET` &nbsp; &nbsp; /stocks
+`GET` &nbsp; &nbsp; /prices
 
 ### Query Parameters
 
@@ -16,14 +16,14 @@ This endpoint fetches all product stocks.
 | ----------------- | ------ | -------- | ------------------------------------------------- |
 | `organization_id` | string | Yes      | The ID of the organization the product belongs to |
 | `product_id`      | string | Yes      | The product ID                                    |
-| `search_value`    | string | No       | A search value to filter stock name by            |
+| `search_value`    | string | No       | A search value to filter price name by            |
 | `page`            | int    | No       | Page to fetch data from. Default 1                |
 | `size`            | int    | No       | Size of the response items. Default 50. Max 100   |
 
 ### Example Request
 
 ```bash
-curl -X GET "https://api.timbu.cloud/stocks?product_id=prod123&organization_id=799bbdca76254f5c83f1d0f35cfb7e30"
+curl -X GET "https://api.timbu.cloud/prices?product_id=prod123&organization_id=799bbdca76254f5c83f1d0f35cfb7e30"
     -H "x-api-key: <API-KEY>"
     -H "x-app-id: <APP-ID>"
 ```
@@ -39,34 +39,35 @@ curl -X GET "https://api.timbu.cloud/stocks?product_id=prod123&organization_id=7
   "next_page": "string",
   "items": [
     {
-      "id": "string",
       "name": "string",
-      "quantity": 0,
-      "buying_price": 0,
-      "currency_code": "string",
-      "supplier_id": "string",
-      "buying_date": "string",
       "product_id": "string",
-      "status": "string",
-      "user_id": "string",
-      "date_created": "2025-01-30T16:12:03.733Z",
-      "original_quantity": 0,
-      "supplier": {
-        "id": "string",
-        "first_name": "string",
-        "last_name": "string",
-        "email": "string",
-        "business_name": "string"
-      },
-      "timeslots": [
+      "stock_id": "string",
+      "price": 0,
+      "discounted_price": 0,
+      "currency_code": "string",
+      "monday": false,
+      "tuesday": false,
+      "wednesday": false,
+      "thursday": false,
+      "friday": false,
+      "saturday": false,
+      "sunday": false,
+      "start": "2025-03-15",
+      "end": "2025-03-15",
+      "customer_group": "string",
+      "extra_info": [
         {
-          "id": "string",
-          "day_of_week": "monday",
-          "start": "string",
-          "end": "string",
-          "is_deleted": false
+          "key": "string",
+          "value": "string",
+          "value_dt": "2025-03-15T21:28:01.432Z"
         }
-      ]
+      ],
+      "priority": 1,
+      "is_private": false,
+      "id": "string",
+      "user_id": "string",
+      "date_created": "2025-03-15T21:28:01.432Z",
+      "last_updated": "2025-03-15T21:28:01.432Z"
     }
   ]
 }

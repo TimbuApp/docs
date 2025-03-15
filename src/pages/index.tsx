@@ -6,6 +6,7 @@ import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import Heading from "@theme/Heading";
 
 import styles from "./index.module.css";
+import React, { JSX } from "react";
 
 function HomepageHeader() {
 	const { siteConfig } = useDocusaurusContext();
@@ -20,7 +21,7 @@ function HomepageHeader() {
 					<Link
 						className="button button--secondary button--lg"
 						to="/api/intro">
-						Docusaurus Tutorial - 5min ⏱️
+						Get started
 					</Link>
 				</div>
 			</div>
@@ -32,12 +33,12 @@ export default function Home(): JSX.Element {
 	const { siteConfig } = useDocusaurusContext();
 	return (
 		<Layout
-			title={`Hello from ${siteConfig.title}`}
-			description="Description will go into a meta tag in <head />">
+			title={`Timbu API documentation`}
+			description="Timbu API documentation">
 			<HomepageHeader />
-			<main>
+			{/* <main>
 				<HomepageFeatures />
-			</main>
+			</main> */}
 		</Layout>
 	);
 }

@@ -70,6 +70,6 @@ curl -X GET "https://api.timbu.cloud/stocks/023094402002da1b24bc79432071cf412ec1
 | Code  | Description                                            |
 | ----- | ------------------------------------------------------ | --- |
 | `200` | OK. Request was successful                             |
-| `404` | Not Found. The product was not found.                  |
+| `404` | Not Found. The stock was not found.                    |
 | `422` | Validation error.                                      | ß   |
 | `500` | Internal server error. An error occurred on the server |
